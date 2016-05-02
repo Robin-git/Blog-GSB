@@ -1,0 +1,20 @@
+<hr>
+<div class="comment clearfix">
+  <div class="comment_content">
+    <p class="comment_name">
+      <strong><%= comment.user.email %> | <%= comment.title %> | <%= time_ago_in_words(comment.created_at) %></strong>
+    </p>
+    <p>
+      <%= comment.body %>
+    </p>
+  </div>
+
+  <% if comment.user.id == current_user.id %>
+    <!-- Bouton qui permet de detruire un post -->
+    <p><%= link_to "Delete", [comment.post, comment],
+            method: :delete,
+            class: "button",
+            data: { confirm: 'Are you sure ?' } %>
+    </p>
+  <% end %>
+</div>

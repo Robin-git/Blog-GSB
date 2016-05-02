@@ -1,0 +1,13 @@
+<%= form_for([@post, @post.comments.build]) do |input| %>
+  <div>
+    <%= input.label :title %><br>
+    <%= input.text_field :title %>
+  </div>
+  <div>
+    <%= input.label :body %><br>
+    <%= input.text_area :body %>
+  </div>
+  <div>
+    <%= input.submit %>
+  </div>
+<% end %>

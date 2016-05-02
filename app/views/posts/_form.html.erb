@@ -1,0 +1,35 @@
+<!-- Formulaire d'envoie de news -->
+<%= form_for @post do |input| %>
+  <!-- Si l'envoie du formulaire contient des erreurs -->
+  <% if @post.errors.any? %>
+    <!-- alors création d'une div qui contient les erreurs -->
+    <div id="errors">
+      <!-- Attempts to pluralize the
+      singular word unless count is 1.
+      If plural is supplied, it will
+      use that when count is > 1,
+      otherwise it will use the Inflector to
+      determine the plural form. -->
+      <h2><%= pluralize(@post.errors.count, "error") %>
+        prevented this post form saving</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |e_msg| %>
+            <li><%= e_msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= input.label :title %><br>
+    <%= input.text_field :title %>
+  </div>
+  <hr>
+  <div>
+    <%= input.label :body %><br>
+    <%= input.text_area :body %>
+  </div>
+  <hr>
+  <div>
+    <%= input.submit %>
+  </div>
+<% end %>

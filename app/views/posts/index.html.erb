@@ -1,0 +1,27 @@
+<!-- *** View.index *** -->
+<!-- Boucle qui parcour la liste des posts -->
+<div class="container">
+  <div class="row">
+    <div>
+      <%= link_to "Nouveau Post", new_post_path %>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <% @posts.each do |post| %>
+          <div class="post-preview">
+            <a href=/posts/<%= post.id %> >
+              <h3 class="post-title">
+                <!-- Création d'un input qui envoie
+                sur la view show/post -->
+                <%= post.title %>
+              </h3>
+              <h3 class="post-subtitle">
+
+              </h3>
+              <p class="post-meta">Posté par <a href="mailto:<%= post.user.email %>"> <%= post.user.email %> </a> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
+            </a>
+          </div>
+        <% end %>
+        <%= paginate @posts %>
+      </div>
+    </div>
+  </div>
