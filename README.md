@@ -5,6 +5,10 @@ Cette application et un blog réalisé en Ruby on Rails, les gems utilisées son
  * <a href="https://github.com/brianmario/mysql2">MySql2</a>
  * <a href="https://github.com/twbs/bootstrap-sass">Bootstrap-sass</a>
 
+# Guide d'utilisation
+Vous devez créer un utilisateur, avec la page "Sign up", ensuite, connectez-vous avec la page "Log in", ensuite vous pouvez créer des postes (articles) ou des commentaires.
+Attention : Si vous écrivez un article ou un commentaire, votre email sera visible sur l'application.
+
 # Modéle MVC 
  * Les vues sont situées dans app/views/*
  * Les controllers sont situés dans app/controllers/*
