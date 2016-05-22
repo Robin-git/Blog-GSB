@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: robin
+  password: root
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: blog-gsb_production
+  database: blog-gsb_clear
   username: blog-gsb
   password: <%= ENV['BLOG-GSB_DATABASE_PASSWORD'] %>
